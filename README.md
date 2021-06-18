@@ -1,23 +1,21 @@
-# X24015 Boot Loader
-SD Bootloader for Tiva TM4C1294 ARM CPU
+# STC1200_boot_loader
+Digital Transport Servo Loop Controller for the Ampex MM1200 Professional Studio Recorder
 
-By [Bob Starr](https://www.rtzmicro.com).
+By [Bob Starr](http://www.rtzaudio.com).
 
 ## Description
-The  project contains the source code for the RTZ Microsystems X24105 CPU card
-for the XMOD micro rack system. This bootloader is designed to run under TI-RTOS
-and uses the PetitFS file system, source included, and has been modified as needed
-for use with TI-RTOS and the Tiva bootloader.
-
-## Authors
-
-* Bob Starr (https://github.com/rtzmicro)
-
+The STC1200_boot_loader project contains the source code for the RTZ Audio
+STC-1200 digitial transport controller boot loader for vintage Ampex MM-1200 
+professional studio recorders. This version support loading the flash image
+from the SD drive. The firmware image must reside in the root directory 
+as the file name 'STC1200.bin'.
 
 ## License
 
-Copyright (C) 2020-2021, RTZ Microsystems, LLC
+Copyright (C) 2016-2021, RTZ Professional Audio, LLC
 
 All Rights Reserved
+
+RTZ is registered trademark of RTZ Professional Audio, LLC
 
  
