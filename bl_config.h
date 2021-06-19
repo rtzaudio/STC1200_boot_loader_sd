@@ -494,7 +494,7 @@
 // Requires: UART_CLOCK_ENABLE
 //
 //*****************************************************************************
-#define UARTx_BASE                UART0_BASE
+#define UARTx_BASE                UART1_BASE
 
 //*****************************************************************************
 //
@@ -505,7 +505,7 @@
 // Requires: UART_RXPIN_BASE, UART_RXPIN_PCTL and UART_RXPIN_POS
 //
 //*****************************************************************************
-#define UART_RXPIN_CLOCK_ENABLE   SYSCTL_RCGCGPIO_R0
+#define UART_RXPIN_CLOCK_ENABLE SYSCTL_RCGCGPIO_R1    // Port-B Clock
 
 //*****************************************************************************
 //
@@ -516,7 +516,7 @@
 // Requires: UART_RXPIN_CLOCK_ENABLE, UART_RXPIN_PCTL and UART_RXPIN_POS
 //
 //*****************************************************************************
-#define UART_RXPIN_BASE         GPIO_PORTA_BASE
+#define UART_RXPIN_BASE         GPIO_PORTB_BASE         // PB0
 
 //*****************************************************************************
 //
@@ -538,7 +538,7 @@
 // Requires: UART_RXPIN_CLOCK_ENABLE, UART_RXPIN_BASE and UART_RXPIN_PCTL
 //
 //*****************************************************************************
-#define UART_RXPIN_POS          0
+#define UART_RXPIN_POS          0                       // PB0
 
 //*****************************************************************************
 //
@@ -549,7 +549,7 @@
 // Requires: UART_TXPIN_BASE, UART_TXPIN_PCTL and UART_TXPIN_POS
 //
 //*****************************************************************************
-#define UART_TXPIN_CLOCK_ENABLE SYSCTL_RCGCGPIO_R0
+#define UART_TXPIN_CLOCK_ENABLE SYSCTL_RCGCGPIO_R1      // Port-B Clock
 
 //*****************************************************************************
 //
@@ -560,7 +560,7 @@
 // Requires: UART_TXPIN_CLOCK_ENABLE, UART_TXPIN_PCTL and UART_TXPIN_POS
 //
 //*****************************************************************************
-#define UART_TXPIN_BASE         GPIO_PORTA_BASE
+#define UART_TXPIN_BASE         GPIO_PORTB_BASE         // PB1
 
 //*****************************************************************************
 //
@@ -582,6 +582,6 @@
 // Requires: UART_TXPIN_CLOCK_ENABLE, UART_TXPIN_BASE and UART_TXPIN_PCTL
 //
 //*****************************************************************************
-#define UART_TXPIN_POS          1
+#define UART_TXPIN_POS          1                       // PB1
 
 #endif // __BL_CONFIG_H__

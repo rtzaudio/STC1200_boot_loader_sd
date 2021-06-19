@@ -51,13 +51,13 @@
 #include "bootloader/bl_hooks.h"
 
 //
-// These define the X24015 LED's that are used to blink during the bootloader
-// update process. These are the alarm (ALM) and activity (ACT) LED's.
+// These define the STAT LED pin configuration. The
+// status LED is wired to pin PF4 on the STC board.
 //
 
-#define LED_GPIO_SYSCTL_PERIPH  SYSCTL_PERIPH_GPIOP
-#define LED_GPIO_PORT_BASE      GPIO_PORTP_BASE         // LED's port base
-#define LED_STAT_PIN            GPIO_PIN_3              // LED STAT pin
+#define LED_GPIO_SYSCTL_PERIPH  SYSCTL_PERIPH_GPIOF
+#define LED_GPIO_PORT_BASE      GPIO_PORTF_BASE         // LED's port base
+#define LED_STAT_PIN            GPIO_PIN_4              // LED STAT pin
 
 #define PIN_LOW     ( 0)
 #define PIN_HIGH    (~0)
