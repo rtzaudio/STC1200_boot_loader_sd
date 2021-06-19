@@ -234,12 +234,17 @@ void ConfigureSSI(void)
     ROM_GPIOPinTypeSSI(SD_GPIO_MISO_BASE, SD_GPIO_MISO_PIN);
 
     // Enable pin PB4 for SSI1 SSI1FSS
-    //GPIOPinConfigure(SD_GPIO_FSS_PINCFG);
+    GPIOPinConfigure(SD_GPIO_FSS_PINCFG);
     //GPIOPinTypeSSI(SD_GPIO_FSS_BASE, SD_GPIO_FSS_PIN);
-    // Enable pin PK7 for GPIOOutput (SSI1FSS_SD)
+
+    // Enable pin PB4 for GPIOOutput (SSI1FSS_SD)
     ROM_GPIOPinTypeGPIOOutput(SD_GPIO_FSS_BASE, SD_GPIO_FSS_PIN);
 
     /* Configure pad settings */
+    /* FSS (PB4) */
+    MAP_GPIOPadConfigSet(SD_GPIO_FSS_BASE,
+                         SD_GPIO_FSS_PIN,
+                         GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD);
 
     /* SCLK (PB5) */
     MAP_GPIOPadConfigSet(SD_GPIO_SCLK_BASE,
@@ -253,10 +258,6 @@ void ConfigureSSI(void)
     MAP_GPIOPadConfigSet(SD_GPIO_MISO_BASE,
                          SD_GPIO_MISO_PIN,
                          GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD_WPU);
-    /* CS (PK7) */
-    MAP_GPIOPadConfigSet(SD_GPIO_FSS_BASE,
-                         SD_GPIO_FSS_PIN,
-                         GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD);
 
     //
     // Configure and enable the SSI port for SPI master mode.  Use SSI1,

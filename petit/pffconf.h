@@ -9,8 +9,8 @@
 #define	FORWARD(d)	forward(d)	/* Data in-time processing function (depends on the project) */
 
 /* SD drive chip select */
-#define CS_H()      ROM_GPIOPinWrite(GPIO_PORTK_BASE, GPIO_PIN_7, GPIO_PIN_7)
-#define CS_L()      ROM_GPIOPinWrite(GPIO_PORTK_BASE, GPIO_PIN_7, 0);
+#define CS_H()      ROM_GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_4, GPIO_PIN_4)
+#define CS_L()      ROM_GPIOPinWrite(GPIO_PORTB_BASE, GPIO_PIN_4, 0);
 
 /*---------------------------------------------------------------------------/
 / Function Configurations

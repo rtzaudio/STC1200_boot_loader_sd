@@ -182,8 +182,9 @@
 //*****************************************************************************
 //
 // The GPIO module to enable in order to check for a forced update.  This will
-// be one of the SYSCTL_RCGCGPIO_Rx values, where Rx represnts the required
-// GPIO port. This applies to Blizzard class and later devices for FORCED_UPDATE_PORT.
+// be one of the SYSCTL_RCGCGPIO_Rx values, where Rx represents the required
+// GPIO port. This applies to Blizzard class and later devices for
+// FORCED_UPDATE_PORT.
 //
 // Depends on: ENABLE_UPDATE_CHECK
 // Exclusive of: None
@@ -440,24 +441,25 @@
 /* Base port for SD SSI */
 #define SD_SSI_BASE                     SSI1_BASE
 
-/* SD Drive SCLK port/pin definitions */
+/* SD Drive FSS port/pin (PB4) definitions */
+#define SD_GPIO_FSS_BASE                GPIO_PORTB_BASE
+#define SD_GPIO_FSS_PINCFG              GPIO_PB4_SSI1FSS
+#define SD_GPIO_FSS_PIN                 GPIO_PIN_4
+
+/* SD Drive SCLK port/pin (PB5) definitions */
 #define SD_GPIO_SCLK_BASE               GPIO_PORTB_BASE
 #define SD_GPIO_SCLK_PINCFG             GPIO_PB5_SSI1CLK
 #define SD_GPIO_SCLK_PIN                GPIO_PIN_5
 
-/* SD Drive MOSI port/pin definitions */
+/* SD Drive MOSI port/pin (PE4) definitions */
 #define SD_GPIO_MOSI_BASE               GPIO_PORTE_BASE
 #define SD_GPIO_MOSI_PINCFG             GPIO_PE4_SSI1XDAT0
 #define SD_GPIO_MOSI_PIN                GPIO_PIN_4
 
-/* SD Drive MISO port/pin definitions */
+/* SD Drive MISO port/pin (PE5) definitions */
 #define SD_GPIO_MISO_BASE               GPIO_PORTE_BASE
 #define SD_GPIO_MISO_PINCFG             GPIO_PE5_SSI1XDAT1
 #define SD_GPIO_MISO_PIN                GPIO_PIN_5
-
-/* SD Drive FSS port/pin definitions */
-#define SD_GPIO_FSS_BASE                GPIO_PORTB_BASE
-#define SD_GPIO_FSS_PIN                 GPIO_PIN_4
 
 //*****************************************************************************
 // THE UART IS AVAILABLE FOR DEBUG OUTPUT MESSAGE SUPPORT
@@ -483,7 +485,7 @@
 // Requires: UARTx_BASE
 //
 //*****************************************************************************
-#define UART_CLOCK_ENABLE         SYSCTL_RCGCUART_R0
+#define UART_CLOCK_ENABLE         SYSCTL_RCGCUART_R1
 
 //*****************************************************************************
 //
